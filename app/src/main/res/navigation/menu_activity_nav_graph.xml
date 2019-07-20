@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_activity_nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.ucsdextandroid2.screennavigation.mainmenu.MainMenuFragment"
+        android:label="MainMenuFragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_instagramActivity"
+            app:destination="@id/instagramActivity" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_twitterActivity"
+            app:destination="@id/twitterActivity" />
+    </fragment>
+
+    <activity
+        android:id="@+id/instagramActivity"
+        android:name="com.ucsdextandroid2.screennavigation.instagram.InstagramActivity"
+        android:label="fragment_bottom_nav"
+        tools:layout="@layout/fragment_bottom_nav" />
+    <activity
+        android:id="@+id/twitterActivity"
+        android:name="com.ucsdextandroid2.screennavigation.twitter.TwitterActivity"
+        android:label="activity_twitter"
+        tools:layout="@layout/activity_twitter" />
+
+</navigation>
