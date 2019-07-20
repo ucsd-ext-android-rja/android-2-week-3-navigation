@@ -28,7 +28,10 @@ public class ProfileFragment extends BaseListFragment {
 
     @Override
     public void onClickAtIndex(int index) {
-
+        Navigation.findNavController(requireView())
+                .navigate(ProfileFragmentDirections
+                        .actionProfileFragmentToSinglePostFragment().setUsername("RJ")
+                );
     }
 
     @Override

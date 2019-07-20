@@ -21,7 +21,7 @@
         android:id="@+id/instagramActivity"
         android:name="com.ucsdextandroid2.screennavigation.instagram.InstagramActivity"
         android:label="fragment_bottom_nav"
-        tools:layout="@layout/fragment_bottom_nav" />
+        tools:layout="@layout/activity_instagram" />
 
     <activity
         android:id="@+id/twitterActivity"

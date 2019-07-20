@@ -1,5 +1,6 @@
 package com.ucsdextandroid2.screennavigation.instagram;
 
+import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.navigation.Navigation;
 import com.ucsdextandroid2.screennavigation.R;
@@ -34,5 +35,13 @@ public class HomeFragment extends BaseListFragment {
     @Override
     public void onClickAtIndex(int index) {
 
+        View view = getView();
+        if(view != null) {
+            Navigation.findNavController(view).navigate(
+                    HomeFragmentDirections
+                            .actionHomeFragmentToSinglePostFragment()
+                            .setUsername("Username " + index)
+            );
+        }
     }
 }

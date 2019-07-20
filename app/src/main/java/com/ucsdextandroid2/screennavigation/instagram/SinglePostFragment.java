@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 import com.ucsdextandroid2.screennavigation.R;
@@ -18,6 +19,15 @@ public class SinglePostFragment extends BaseListFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        NavigationUI.setupWithNavController(getToolbar(), Navigation.findNavController(view));
+
+        Bundle args = getArguments();
+
+        if(args != null) {
+            SinglePostFragmentArgs fragmentArgs = SinglePostFragmentArgs.fromBundle(args);
+            if(fragmentArgs.getUsername() != null)
+                getToolbar().setTitle( "Post by " + fragmentArgs.getUsername());
+        }
     }
 
     @Override

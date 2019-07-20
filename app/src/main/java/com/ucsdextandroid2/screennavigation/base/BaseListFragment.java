@@ -41,13 +41,15 @@ public abstract class BaseListFragment extends Fragment implements OnClickAtInde
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        PlaceholderDataGenerator placeholderData = new PlaceholderDataGenerator(getCount(), getPlaceholderViewBinder());
-        adapter = new PlaceholderAdapter(placeholderData, getViewHolderLayoutResId(), getHeaderViewHolderResId());
-        adapter.setOnClickAtIndexListener(index -> {
-            BaseListFragment.this.onClickAtIndex(index);
-            if(onClickAtIndexListener != null)
-                onClickAtIndexListener.onClickAtIndex(index);
-        });
+        if(adapter == null) {
+            PlaceholderDataGenerator placeholderData = new PlaceholderDataGenerator(getCount(), getPlaceholderViewBinder());
+            adapter = new PlaceholderAdapter(placeholderData, getViewHolderLayoutResId(), getHeaderViewHolderResId());
+            adapter.setOnClickAtIndexListener(index -> {
+                BaseListFragment.this.onClickAtIndex(index);
+                if (onClickAtIndexListener != null)
+                    onClickAtIndexListener.onClickAtIndex(index);
+            });
+        }
     }
 
     @Nullable

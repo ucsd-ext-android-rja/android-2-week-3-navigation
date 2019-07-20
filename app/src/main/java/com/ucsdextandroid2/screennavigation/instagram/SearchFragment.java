@@ -40,6 +40,9 @@ public class SearchFragment extends BaseListFragment {
 
     @Override
     public void onClickAtIndex(int index) {
-
+        Navigation.findNavController(requireView()).navigate(
+                SearchFragmentDirections.actionSearchFragmentToSinglePostFragment()
+                        .setUsername("Searchuser " + index)
+        );
     }
 }
