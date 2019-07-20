@@ -33,7 +33,6 @@ public class HomeFragment extends BaseListFragment {
 
     @Override
     public void onClickAtIndex(int index) {
-        Navigation.findNavController(requireView())
-                .navigate(R.id.action_home_fragment_to_singlePostFragment);
+
     }
 }

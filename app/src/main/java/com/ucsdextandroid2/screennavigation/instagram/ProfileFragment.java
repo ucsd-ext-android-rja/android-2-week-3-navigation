@@ -28,8 +28,7 @@ public class ProfileFragment extends BaseListFragment {
 
     @Override
     public void onClickAtIndex(int index) {
-        Navigation.findNavController(requireView())
-                .navigate(R.id.action_profile_fragment_to_singlePostFragment);
+
     }
 
     @Override

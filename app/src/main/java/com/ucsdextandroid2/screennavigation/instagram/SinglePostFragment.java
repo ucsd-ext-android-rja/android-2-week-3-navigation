@@ -18,11 +18,6 @@ public class SinglePostFragment extends BaseListFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        NavigationUI.setupWithNavController(getToolbar(), Navigation.findNavController(view));
-
-        String title = SinglePostFragmentArgs.fromBundle(getArgumentsNonNull()).getUsername();
-        if(title != null)
-            getToolbar().setTitle(title);
     }
 
     @Override
