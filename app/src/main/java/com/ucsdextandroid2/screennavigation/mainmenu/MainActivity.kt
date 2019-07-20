@@ -13,14 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_main_menu)
-
-        findViewById<Button>(R.id.am_button_1).setOnClickListener {
-            startActivity(Intent(this, InstagramActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.am_button_2).setOnClickListener {
-            startActivity(Intent(this, TwitterActivity::class.java))
-        }
+        setContentView(R.layout.activity_main)
     }
 }
